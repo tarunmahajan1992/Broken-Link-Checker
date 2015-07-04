@@ -1,0 +1,34 @@
+{
+  "name": "Broken Link Checker",
+  "version": "1.0",
+  "author":"Tarun Kumar",
+  "description": "Broken link checker crawls through your webpage and find broken links, redirect codes, 200 success pages and timeout urls.",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "devtools_page": "devtools.html",
+  "permissions":  [
+    "tabs",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],
+	  "css":["content_css.css"]
+    }
+  ],
+ 
+  "manifest_version": 2,
+  "browser_action": {
+	      "default_icon": {                   
+            "19": "images/icon19.png",           
+            "38": "images/icon38.png"            
+          },
+          "default_title": "broken link cheker",      
+          "default_popup": "popup.html"        
+        },
+  "icons": { 
+     "16": "images/icon16.png",
+     "48": "images/icon48.png",
+      "128": "images/icon128.png" }
+}
